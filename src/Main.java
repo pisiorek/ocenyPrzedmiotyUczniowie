@@ -39,6 +39,7 @@ public class Main {
         cSharpMarksPupil1.add(3);
 
 
+        //połączenie za pomocą hashMapy listy ocen (value) z konkretnym przedmiotem (key)
         pupil1.marks.put(pupil1.subjects.get(0),javaMarksPupil1);
         pupil1.marks.put(pupil1.subjects.get(1),phpMarksPupil1);
         pupil1.marks.put(pupil1.subjects.get(2),cPlusMarksPupil1);
@@ -116,3 +117,14 @@ public class Main {
 
     }
 }
+
+/*
+for (Map.Entry<String, List<Integer>> entry : pupil2.marks.entrySet())
+        {
+            String key = entry.getKey();
+            List<Integer> value = entry.getValue();
+
+            this.add(value);
+        }
+
+*/
