@@ -10,10 +10,12 @@ public class Main {
         Pupils pupil1 = new Pupils("Michał", 1);
 
 
-        //ArrayLista subjects - zadeklarowana w Pupils
-        pupil1.subjects.add("Java");//dopisujemy do listy przedmiotów przedmiot wybrany przez konkretnego ucznia
+        //ArrayLista subjects - zadeklarowana w Pupils - jedna dla każdego ucznia
+        pupil1.subjects.add("Java");  //dopisujemy przedmiot wybrany przez konkretnego ucznia do jego listy przedmiotów
+        //lista ocen - należy stworzyć jedną dla każdego przedmiotu
         ArrayList<Integer> javaMarksPupil1 = new ArrayList<Integer>(); //lista dla ocen z wybranego przedmiotu
-        javaMarksPupil1.add(5); //dopisanie do listy oceny
+        //dopisanie ocen do listy ocen
+        javaMarksPupil1.add(5);
         javaMarksPupil1.add(4);
         javaMarksPupil1.add(3);
 
@@ -39,7 +41,8 @@ public class Main {
         cSharpMarksPupil1.add(3);
 
 
-        //połączenie za pomocą hashMapy listy ocen (value) z konkretnym przedmiotem (key)
+        //połączenie za pomocą hashMapy listy ocen stanowiącej wartość (value)
+        // kluczem (key) w postaci nazwy przedmiotu pobranym z listy subjects)
         pupil1.marks.put(pupil1.subjects.get(0),javaMarksPupil1);
         pupil1.marks.put(pupil1.subjects.get(1),phpMarksPupil1);
         pupil1.marks.put(pupil1.subjects.get(2),cPlusMarksPupil1);
@@ -50,6 +53,9 @@ public class Main {
 
         Double temp = 0.0;
         Double average = 0.0;
+        //lista dla potrzeb wyliczenia średniej, przypisujemy do niej całą listę ocen
+        // z danego przedmiotu stanowiącą wartość Value z
+        //wcześniej stworzonej hashMapy
         List<Integer> list;
 
         for(Map.Entry<String, List<Integer>> entry: pupil1.marks.entrySet()){
